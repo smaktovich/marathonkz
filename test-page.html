@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Опросник</title>
+    <link rel="stylesheet" href="/style/test-style.css" />
+  </head>
+  <body>
+    <div class="header"></div>
+    <h1>Teст</h1>
+    <div id="quiz">
+      <div id="question1" style="display: block">
+        <h2>1. В процессе диалога вы активно жестикулируете руками?</h2>
+        <div class="btnin">
+          <button onclick="answerQuestion(1, 4)">Да</button>
+          <button onclick="answerQuestion(1, 3)">Скорее да, чем нет</button>
+          <button onclick="answerQuestion(1, 2)">Скорее нет, чем да</button>
+          <button onclick="answerQuestion(1, 1)">Нет</button>
+        </div>
+      </div>
+      <div id="question2" style="display: none">
+        <h2>2. Вы надолго запоминаете сказанное знакомыми?</h2>
+        <div class="btnin">
+          <button onclick="answerQuestion(2, 4)">Да</button>
+          <button onclick="answerQuestion(2, 3)">Скорее да, чем нет</button>
+          <button onclick="answerQuestion(2, 2)">Скорее нет, чем да</button>
+          <button onclick="answerQuestion(2, 1)">Нет</button>
+        </div>
+      </div>
+      <div id="question3" style="display: none">
+        <h2>
+          3. Вы обладаете фотографической памятью, обращаете внимание на мелкие
+          детали?
+        </h2>
+        <div class="btnin">
+          <button onclick="answerQuestion(3, 4)">Да</button>
+          <button onclick="answerQuestion(3, 3)">Скорее да, чем нет</button>
+          <button onclick="answerQuestion(3, 2)">Скорее нет, чем да</button>
+          <button onclick="answerQuestion(3, 1)">Нет</button>
+        </div>
+      </div>
+      <div id="question4" style="display: none">
+        <h2>
+          4. Вы любите заниматься двигательными упражнениями (спорт, танцы)?
+        </h2>
+        <div class="btnin">
+          <button onclick="answerQuestion(4, 4)">Да</button>
+          <button onclick="answerQuestion(4, 3)">Скорее да, чем нет</button>
+          <button onclick="answerQuestion(4, 2)">Скорее нет, чем да</button>
+          <button onclick="answerQuestion(4, 1)">Нет</button>
+        </div>
+      </div>
+      <div id="question5" style="display: none">
+        <h2>
+          5. Вы не можете слушать музыку плохого звучания (сломанные наушники,
+          расстроены инструменты, некачественный звук у колонки)?
+        </h2>
+        <div class="btnin">
+          <button onclick="answerQuestion(5, 4)">Да</button>
+          <button onclick="answerQuestion(5, 3)">Скорее да, чем нет</button>
+          <button onclick="answerQuestion(5, 2)">Скорее нет, чем да</button>
+          <button onclick="answerQuestion(5, 1)">Нет</button>
+        </div>
+      </div>
+      <div id="question6" style="display: none">
+        <h2>6. В процессе общения вы тщательно рассматриваете собеседника?</h2>
+        <div class="btnin">
+          <button onclick="answerQuestion(6, 4)">Да</button>
+          <button onclick="answerQuestion(6, 3)">Скорее да, чем нет</button>
+          <button onclick="answerQuestion(6, 2)">Скорее нет, чем да</button>
+          <button onclick="answerQuestion(6, 1)">Нет</button>
+        </div>
+      </div>
+      <div id="question7" style="display: none">
+        <h2>7. Важно ли для вас, как одеваются другие люди?</h2>
+        <div class="btnin">
+          <button onclick="answerQuestion(7, 4)">Да</button>
+          <button onclick="answerQuestion(7, 3)">Скорее да, чем нет</button>
+          <button onclick="answerQuestion(7, 2)">Скорее нет, чем да</button>
+          <button onclick="answerQuestion(7, 1)">Нет</button>
+        </div>
+      </div>
+      <div id="question8" style="display: none">
+        <h2>
+          8. Для вас наиболее предпочтительная живая встреча, нежели телефонные
+          разговоры?
+        </h2>
+        <div class="btnin">
+          <button onclick="answerQuestion(8, 4)">Да</button>
+          <button onclick="answerQuestion(8, 3)">Скорее да, чем нет</button>
+          <button onclick="answerQuestion(8, 2)">Скорее нет, чем да</button>
+          <button onclick="answerQuestion(8, 1)">Нет</button>
+        </div>
+      </div>
+      <div id="question9" style="display: none">
+        <h2>9. Чтобы лучше запомнить материал, вы читаете вслух?</h2>
+        <div class="btnin">
+          <button onclick="answerQuestion(9, 4)">Да</button>
+          <button onclick="answerQuestion(9, 3)">Скорее да, чем нет</button>
+          <button onclick="answerQuestion(9, 2)">Скорее нет, чем да</button>
+          <button onclick="answerQuestion(9, 1)">Нет</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="results" style="display: none"></div>
+    <div class="inin">
+      <div id="hiddenText1" style="display: none">
+        <ul>
+          <p>
+            Аудиал <br />Аудиалы лучше воспринимают информацию на
+            слух.Мнемонические техники, подкасты и аудиокниги — это про них.
+            <br />Как понять что ты аудиал? <br />
+            Для аудиала характерно употребление слов, связанных со слуховым
+            восприятием (голос, послушайте, обсуждать, молчаливый, тишина,
+            громкий, благозвучный и т. д.). Словарь кинестетика в основном
+            включает слова, описывающие чувства или движения (схватывать,
+            мягкий, теплый, прикосновение, гибкий, хороший нюх и т. д.).
+            <br />Подходящие виды спорта: <br />
+            <li>1.Танцы</li>
+            <li>2.Художественная/спортивная гимнастика</li>
+            <li>3.Черлидинг</li>
+            <li>4.Синхронное плавание</li>
+            <li>5.Фигурное катание</li>
+            <br />Способы правильно получить информацию о питании: <br />
+            <li>1.Лекции</li>
+            <li>2.Посещение форумов</li>
+            <li>3.Телепередачи</li>
+            <li>4.Общение с психологом/коучем</li>
+          </p>
+        </ul>
+      </div>
+      <div id="hiddenText2" style="display: none">
+        <ul>
+          <p>
+            Кинестетик <br />Кинестетик — человек, который преимущественно
+            чувствует, телесно ощущает, и в меньшей степени видит, слышит или
+            думает. У кинестетика развиты в первую очередь осязание (тактильная
+            чувствительность), вкус, боль, тепловые, вибрационные и мышечные
+            ощущения. Кинестетик стремится двигаться и действовать. <br />Как
+            понять что ты кинестетик? <br />Кинестетик – тот, кто воспринимающий
+            информацию через другие ощущения (обоняние, осязание и др.) и с
+            помощью движений. <br />Подходящие виды спорта:<br />
+            <li>1.Легкая атлетика</li>
+            <li>2.Плавание</li>
+            <li>3.Велоспорт</li>
+            <li>
+              4. Командные виды спорта (баскетбол, футбол, волейбол и т.д)
+            </li>
+            <li>5.Боевые искусства</li>
+            <br />Способы правильно получить информацию: <br />
+            <li>1.Просмотр блогов, телепередач</li>
+            <li>2.Чтение журналов, книг, статей, блогов и т.д</li>
+            <li>3.Слушание видео материалов</li>
+          </p>
+        </ul>
+      </div>
+      <div id="hiddenText3" style="display: none">
+        <ul>
+          <p>
+            Визуал <br />Визуалам привычно «видеть» мир с помощью зрения. Если
+            читая книгу, вы ярко воображаете происходящее, лучше запоминаете не
+            сухой текст, а изображение, графики и иллюстрации — вы визуал.
+            <br />Как понять что ты визуал? <br />Визуал помнит то, что видел,
+            запоминает картинами (образное мышление хорошо развито).
+            <br />Подходящий вид спорта:
+            <li>1.Командные виды спорта (баскетбол, футбол, волейбол и т.д)</li>
+            <li>2.Танцы</li>
+            <li>3.Синхронное плавание</li>
+            <li>4.Художественная/спортивная гимнастика</li>
+            <br />Способы правильно получить информацию:<br />
+            <li>1.Использование специальных приложений для здоровья</li>
+            <li>2.Чтение журналов</li>
+            <li>3.Просмотр телепередач</li>
+            <li>4.Чтение блогов, статей</li>
+            <li>5.Работать по картинкам</li>
+          </p>
+        </ul>
+      </div>
+    </div>
+    <div id="output1"></div>
+    <div id="output2"></div>
+    <div id="output3"></div>
+    <div class="btn">
+      <button class="back">
+        <a href="index.html">
+          <h2>Назад на Главную</h2>
+        </a>
+      </button>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
